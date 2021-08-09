@@ -602,7 +602,7 @@ contract UniswapV3Pool is IUniswapV3Pool, NoDelegateCall {
         uint nftId
     ) external override noDelegateCall returns (int256 amount0, int256 amount1) {
         require(amountSpecified != 0, 'AS');
-        require(NFT.ownerOf(nftId) == msg.sender);
+        require(NFT.ownerOf(nftId) == recipient);
 
         Slot0 memory slot0Start = slot0;
 
