@@ -599,7 +599,7 @@ contract UniswapV3Pool is IUniswapV3Pool, NoDelegateCall {
         int256 amountSpecified,
         uint160 sqrtPriceLimitX96,
         bytes calldata data,
-        uint nftId
+        uint256 nftId
     ) external override noDelegateCall returns (int256 amount0, int256 amount1) {
         require(amountSpecified != 0, 'AS');
         require(NFT.ownerOf(nftId) == recipient);
